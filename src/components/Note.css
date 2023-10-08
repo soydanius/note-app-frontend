@@ -1,11 +1,22 @@
 .card {
   width: 20rem;
   height: 20rem;
-  border: 2px solid var(--border-color);
+  /* border: 2px solid var(--border-color); */
   background-color: var(--card-color);
   border-radius: 1rem;
   overflow: hidden;
-  margin: 1rem;
+  position: relative;
+}
+
+input,
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  border: none;
+  background: none;
+  outline: none;
+  caret-color: var(--primary-color);
 }
 
 .card__header {
@@ -15,27 +26,56 @@
   display: flex;
   align-items: center;
   font-size: 20px;
+  font-weight: 500;
+  /* color: var(--primary-color); */
+  width: 100%;
+  line-height: 20px;
+}
+
+.card__header--edit {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 20px;
 }
 
 .card__content {
-  height: 70%;
+  height: 80%;
   padding: 1rem;
+  line-height: 1rem;
 }
 
-.card__buttons {
-  height: 15%;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.card__content--edit {
+  height: 80%;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--text-color);
+  resize: none;
+  line-height: 1rem;
+  display: block;
+  overflow-wrap: break-word;
 }
 
 .card__button {
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
   background-color: transparent;
   border: none;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .card__button--delete {
   color: var(--error-color);
+  transition: text-shadow 0.2s ease;
+}
+
+.card__button--delete:hover {
+  text-shadow: 0 0 20px var(--error-color);
+}
+
+.card__button--delete:active {
+  text-shadow: 0 0 30px var(--error-color);
 }
