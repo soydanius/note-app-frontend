@@ -1,0 +1,41 @@
+.card {
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid var(--border-color);
+  background-color: var(--card-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.card__header {
+  height: 15%;
+  border-bottom: 2px solid var(--border-color);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.card__content {
+  height: 70%;
+  padding: 1rem;
+}
+
+.card__buttons {
+  height: 15%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card__button {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+.card__button--delete {
+  color: var(--error-color);
+}

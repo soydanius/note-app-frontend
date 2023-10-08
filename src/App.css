@@ -3,7 +3,17 @@
 }
 
 .main-wrapper {
+  margin: 0 auto;
   max-width: 1200px;
   height: 100vh;
-  background-color: #ffffff;
+  border-left: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
+}
+
+.app-header {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--border-color);
+  /* color: var(--primary-color); */
 }
