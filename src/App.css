@@ -5,7 +5,7 @@
 .main-wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  height: 100vh;
+  min-height: 100vh;
   border-left: 2px solid var(--border-color);
   border-right: 2px solid var(--border-color);
   background-color: var(--background-color);
@@ -16,7 +16,7 @@
     text-shadow: 0 0 10px var(--primary-color); /* Initial glow */
   }
   50% {
-    text-shadow: 0 0 20px var(--primary-color); /* Intensify the glow */
+    text-shadow: 0 0 30px var(--primary-color); /* Intensify the glow */
   }
   100% {
     text-shadow: 0 0 10px var(--primary-color); /* Return to the initial glow */
@@ -30,5 +30,9 @@
   border-bottom: 2px solid var(--border-color);
   color: var(--primary-color);
   /* text-shadow: 0 0 20px var(--primary-color); */
-  animation: glowAnimation 6s infinite;
+  animation: glowAnimation 8s infinite;
+}
+
+.app-content {
+  padding: 1rem;
 }

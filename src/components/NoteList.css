@@ -1,0 +1,18 @@
+.notes-container {
+  width: 64rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.btn-container {
+  width: 20rem;
+  height: 20rem;
+  /* border: 2px solid var(--border-color); */
+  background-color: var(--card-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

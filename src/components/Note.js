@@ -1,7 +1,7 @@
 import "./Note.css";
 import { useState, useRef, useEffect } from "react";
 
-const Note = ({ initialHeader, initialContent }) => {
+const Note = ({ id, initialHeader, initialContent, handleDeleteNote }) => {
   const [header, setHeader] = useState(initialHeader);
   const [content, setContent] = useState(initialContent);
   const [isEditingHeader, setIsEditingHeader] = useState(false);
@@ -34,7 +34,7 @@ const Note = ({ initialHeader, initialContent }) => {
           value={header}
           spellCheck={false}
           onChange={(e) => setHeader(e.target.value)}
-          /* onBlur={() => setIsEditingHeader(false)} */
+          onBlur={() => setIsEditingHeader(false)}
           onKeyDown={handleKeyDown}
         />
       ) : (
@@ -64,7 +64,7 @@ const Note = ({ initialHeader, initialContent }) => {
       <button
         className="card__button card__button--delete"
         onClick={() => {
-          console.log("Delete");
+          handleDeleteNote(id);
         }}
       >
         Delete

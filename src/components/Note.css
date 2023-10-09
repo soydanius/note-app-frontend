@@ -77,5 +77,5 @@ textarea {
 }
 
 .card__button--delete:active {
-  text-shadow: 0 0 30px var(--error-color);
+  text-shadow: 0 0 10px var(--error-color);
 }

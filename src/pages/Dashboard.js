@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 import NoteList from "../components/NoteList";
 
-const Dashboard = () => {
+const Dashboard = (first) => {
   return (
     <div className="container">
       <NoteList />
