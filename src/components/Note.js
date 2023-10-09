@@ -34,7 +34,7 @@ const Note = ({ initialHeader, initialContent }) => {
           value={header}
           spellCheck={false}
           onChange={(e) => setHeader(e.target.value)}
-          onBlur={() => setIsEditingHeader(false)}
+          /* onBlur={() => setIsEditingHeader(false)} */
           onKeyDown={handleKeyDown}
         />
       ) : (

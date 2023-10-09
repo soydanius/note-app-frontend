@@ -29,14 +29,14 @@ textarea {
   font-weight: 500;
   /* color: var(--primary-color); */
   width: 100%;
-  line-height: 20px;
 }
 
 .card__header--edit {
+  height: 15%;
   font-size: 20px;
   font-weight: 500;
   color: var(--text-color);
-  line-height: 20px;
+  padding-bottom: 1px;
 }
 
 .card__content {
