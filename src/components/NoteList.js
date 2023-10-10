@@ -36,8 +36,29 @@ const NoteList = () => {
       if (noteId) {
         const response = await axios.delete(`${baseApiUrl}/notes/${noteId}`);
         if (response.status === 200) {
-          const filteredNotes = notesData.filter((note) => note.id !== noteId);
+          const filteredNotes = notesData.filter((note) => note._id !== noteId);
           setNotesData([...filteredNotes]);
+        }
+      }
+    } catch (error) {
+      console.error("Error adding note:", error.message);
+    }
+  };
+
+  const handleUpdateNote = async (note) => {
+    try {
+      if (note) {
+        const { id, header, content } = note;
+        const response = await axios.put(`${baseApiUrl}/notes/${id}`, {
+          header,
+          content,
+        });
+        if (response.status === 200) {
+          setNotesData((prevNotes) =>
+            prevNotes.map((currNote) =>
+              currNote.id === id ? { ...currNote, header, content } : currNote
+            )
+          );
         }
       }
     } catch (error) {
@@ -59,6 +80,7 @@ const NoteList = () => {
               initialHeader={note.header}
               initialContent={note.content}
               handleDeleteNote={handleDeleteNote}
+              handleUpdateNote={handleUpdateNote}
             />
           );
         })}

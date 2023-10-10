@@ -1,7 +1,13 @@
 import "./Note.css";
 import { useState, useRef, useEffect } from "react";
 
-const Note = ({ id, initialHeader, initialContent, handleDeleteNote }) => {
+const Note = ({
+  id,
+  initialHeader,
+  initialContent,
+  handleDeleteNote,
+  handleUpdateNote,
+}) => {
   const [header, setHeader] = useState(initialHeader);
   const [content, setContent] = useState(initialContent);
   const [isEditingHeader, setIsEditingHeader] = useState(false);
@@ -20,8 +26,14 @@ const Note = ({ id, initialHeader, initialContent, handleDeleteNote }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setIsEditingHeader(false);
+      handleSaveEdit();
     }
+  };
+
+  const handleSaveEdit = async () => {
+    const newNote = { id, header, content };
+    handleUpdateNote(newNote);
+    setIsEditingHeader(false);
   };
 
   return (
@@ -34,7 +46,7 @@ const Note = ({ id, initialHeader, initialContent, handleDeleteNote }) => {
           value={header}
           spellCheck={false}
           onChange={(e) => setHeader(e.target.value)}
-          onBlur={() => setIsEditingHeader(false)}
+          onBlur={handleSaveEdit}
           onKeyDown={handleKeyDown}
         />
       ) : (
@@ -51,7 +63,7 @@ const Note = ({ id, initialHeader, initialContent, handleDeleteNote }) => {
           value={content}
           spellCheck={false}
           onChange={(e) => setContent(e.target.value)}
-          onBlur={() => setIsEditingContent(false)}
+          onBlur={handleSaveEdit}
         />
       ) : (
         <p
