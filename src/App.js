@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="main-wrapper">
-        <header className="app-header">Note App</header>
+        <header className="app-header">Neon Note</header>
         <div className="app-content">
           <Router>
             <Routes>

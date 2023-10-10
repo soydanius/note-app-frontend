@@ -6,6 +6,29 @@
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
+  transition: box-shadow 0.4s ease;
+}
+
+.card--glow {
+  box-shadow: 0 0 20px 5px var(--primary-color);
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+}
+
+.card--flicker {
+  animation: flicker 0.1s infinite;
 }
 
 input,
@@ -69,7 +92,7 @@ textarea {
 
 .card__button--delete {
   color: var(--error-color);
-  transition: text-shadow 0.2s ease;
+  transition: text-shadow 0.4s ease;
 }
 
 .card__button--delete:hover {

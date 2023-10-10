@@ -34,10 +34,27 @@ const Note = ({
     const newNote = { id, header, content };
     handleUpdateNote(newNote);
     setIsEditingHeader(false);
+    setIsEditingContent(false);
   };
 
+  const [isFlickering, setIsFlickering] = useState(true);
+
+  useEffect(() => {
+    const flickerTimeout = setTimeout(() => {
+      setIsFlickering(false);
+    }, 300); // Adjust the timeout duration as needed
+
+    return () => {
+      clearTimeout(flickerTimeout);
+    };
+  }, []);
+
   return (
-    <div className="card">
+    <div
+      className={`card ${
+        isEditingHeader || isEditingContent ? "card--glow" : ""
+      } ${isFlickering ? "card--flicker" : ""}`}
+    >
       {isEditingHeader ? (
         <input
           className="card__header card__header--edit"
